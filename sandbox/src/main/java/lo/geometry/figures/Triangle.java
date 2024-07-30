@@ -1,10 +1,11 @@
+package lo.geometry.figures;
+
 public class Triangle {
         double sideA;
         double sideB;
         double sideC;
 
-
-        public double getSideA () {
+    public double getSideA () {
             return sideA;
         }
 
@@ -33,18 +34,20 @@ public class Triangle {
         public void setSideC ( double sideC){
             this.sideC = sideC;
         }
+
         public double getPerimeter() {
            return sideA + sideB + sideC;
         }
 
         public  double getArea(){
             double p = getPerimeter()/2;
-            return Math.sqrt(p * (p - sideA) * (p - sideB) * (p - sideA));
+            return Math.sqrt(p * (p - sideA) * (p - sideB) * (p - sideC));
 }
-public static void main(String[] args) {
-            Triangle one = new Triangle(2, 4, 5);
-    System.out.println(" Triangle Perimeter"+ "=" + one.getPerimeter());
-    System.out.println("Triangle Area" + "=" + one.getArea());
+
+    public static void main(String[] args) {
+            Triangle one = new Triangle(2.0,4.0, 5.0);
+    System.out.println(" lo.geometry.figures.Triangle Perimeter"+ "=" + one.getPerimeter());
+    System.out.println("lo.geometry.figures.Triangle Area" + "=" + one.getArea());
 }
     }
 
