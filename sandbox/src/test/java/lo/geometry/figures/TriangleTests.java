@@ -17,4 +17,69 @@ public class TriangleTests {
      double expected = 3.8;
      Assertions.assertEquals(expected, two.getArea(), 0.1);
     }
+
+    @Test
+    public void testNegativeSide1() {
+        try {
+            Triangle two = new Triangle(-2, 3, 5);
+            Assertions.fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException exception){
+          Assertions.assertEquals("Side can not be negative or zero", exception.getMessage());
+    }
+    }
+    @Test
+    public void testNegativeSide2() {
+        try {
+            Triangle two = new Triangle(2, -3, 5);
+            Assertions.fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException exception){
+            Assertions.assertEquals("Side can not be negative or zero", exception.getMessage());
+        }
+    }
+    @Test
+    public void testNegativeSide3() {
+        try {
+            Triangle two = new Triangle(2, 3, -5);
+            Assertions.fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException exception){
+            Assertions.assertEquals("Side can not be negative or zero", exception.getMessage());
+        }
+    }
+    @Test
+    public void testSideCannotBeZero() {
+        try {
+            Triangle two = new Triangle(0, 3, 5);
+            Assertions.fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException exception){
+            Assertions.assertEquals("Side can not be negative or zero", exception.getMessage());
+        }
+    }
+
+    @Test
+    public void testSumOfSidesRegulation1(){
+     try {
+         Triangle two = new Triangle(2, 2, 5);
+         Assertions.fail("Expected IllegalArgumentException");
+     } catch (IllegalArgumentException exception){
+         Assertions.assertEquals(" Sum of two sides can not be lower then the third side size",exception.getMessage());
+     }
+    }
+    @Test
+    public void testSumOfSidesRegulation2(){
+        try {
+            Triangle two = new Triangle(5, 2, 2);
+            Assertions.fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException exception){
+            Assertions.assertEquals(" Sum of two sides can not be lower then the third side size",exception.getMessage());
+        }
+    }
+    @Test
+    public void testSumOfSidesRegulation3(){
+        try {
+            Triangle two = new Triangle(2, 5, 2);
+            Assertions.fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException exception){
+            Assertions.assertEquals(" Sum of two sides can not be lower then the third side size",exception.getMessage());
+        }
+    }
 }

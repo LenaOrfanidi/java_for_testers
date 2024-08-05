@@ -18,10 +18,18 @@ public class Triangle {
         }
 
     public Triangle( double sideA, double sideB, double sideC){
-            this.sideA = sideA;
-            this.sideB = sideB;
-            this.sideC = sideC;
+
+        if (sideA <= 0 || sideB <= 0 || sideC <= 0 ) {
+            throw new IllegalArgumentException("Side can not be negative or zero");
         }
+        if ((sideA + sideB < sideC) || (sideA + sideC < sideB) || (sideB + sideC < sideA)){
+            throw new IllegalArgumentException(" Sum of two sides can not be lower then the third side size");
+        }
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.sideC = sideC;
+        }
+
 
         public void setSideA ( double sideA){
             this.sideA = sideA;
