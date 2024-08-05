@@ -1,6 +1,8 @@
 package lo.geometry.figures;
 
-public class Triangle {
+import java.util.Objects;
+
+public class Triangle  {
         double sideA;
         double sideB;
         double sideC;
@@ -17,7 +19,22 @@ public class Triangle {
             return sideC;
         }
 
-    public Triangle( double sideA, double sideB, double sideC){
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Triangle newtriangle = (Triangle) o;
+        return (Double.compare(newtriangle.sideA, sideA) == 0 && Double.compare(newtriangle.sideB, sideB) == 0 && Double.compare(newtriangle.sideC, sideC) == 0)
+                || (Double.compare(newtriangle.sideA, sideB) == 0 && Double.compare(newtriangle.sideB, sideA) == 0 && Double.compare(newtriangle.sideC, sideC) == 0)
+                || (Double.compare(newtriangle.sideA, sideA) == 0 && Double.compare(newtriangle.sideB, sideB) == 0 && Double.compare(newtriangle.sideC, sideC) == 0);
+    }
+
+    @Override
+    public int hashCode() {
+        return 1;
+    }
+
+    public Triangle(double sideA, double sideB, double sideC){
 
         if (sideA <= 0 || sideB <= 0 || sideC <= 0 ) {
             throw new IllegalArgumentException("Side can not be negative or zero");

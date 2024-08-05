@@ -82,4 +82,11 @@ public class TriangleTests {
             Assertions.assertEquals(" Sum of two sides can not be lower then the third side size",exception.getMessage());
         }
     }
+
+    @Test
+    public void testEqualsTriangles(){
+     Triangle one = new Triangle(4,3,5);
+     Triangle two = new Triangle(3,4,5 );
+     Assertions.assertTrue(one.equals(two));
+    }
 }
