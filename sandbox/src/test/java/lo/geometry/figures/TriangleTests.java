@@ -95,4 +95,11 @@ public class TriangleTests {
         Triangle two = new Triangle(4,5,3 );
         Assertions.assertTrue(one.equals(two));
     }
-}
+    @Test
+    public void testEqualsTriangle2(){
+        Triangle one = new Triangle(4,3,5);
+        Triangle two = new Triangle(3,5,4 );
+        Assertions.assertTrue(one.equals(two));
+    }
+    }
+

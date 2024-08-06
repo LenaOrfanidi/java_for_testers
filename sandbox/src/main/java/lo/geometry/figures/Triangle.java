@@ -25,8 +25,11 @@ public class Triangle  {
         if (o == null || getClass() != o.getClass()) return false;
         Triangle newtriangle = (Triangle) o;
         return (Double.compare(newtriangle.sideA, sideA) == 0 && Double.compare(newtriangle.sideB, sideB) == 0 && Double.compare(newtriangle.sideC, sideC) == 0)
+                || (Double.compare(newtriangle.sideA, sideA) == 0 && Double.compare(newtriangle.sideB, sideC) == 0 && Double.compare(newtriangle.sideC, sideB) == 0)
                 || (Double.compare(newtriangle.sideA, sideB) == 0 && Double.compare(newtriangle.sideB, sideA) == 0 && Double.compare(newtriangle.sideC, sideC) == 0)
-                || (Double.compare(newtriangle.sideA, sideA) == 0 && Double.compare(newtriangle.sideB, sideC) == 0 && Double.compare(newtriangle.sideC, sideB) == 0);
+                || (Double.compare(newtriangle.sideA, sideB) == 0 && Double.compare(newtriangle.sideB, sideC) == 0 && Double.compare(newtriangle.sideC, sideA) == 0)
+                || (Double.compare(newtriangle.sideA, sideC) == 0 && Double.compare(newtriangle.sideB, sideA) == 0 && Double.compare(newtriangle.sideC, sideB) == 0)
+                || (Double.compare(newtriangle.sideA, sideC) == 0 && Double.compare(newtriangle.sideB, sideB) == 0 && Double.compare(newtriangle.sideC, sideA) == 0);
     }
 
     @Override
