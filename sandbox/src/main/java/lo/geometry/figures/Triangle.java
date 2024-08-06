@@ -26,7 +26,7 @@ public class Triangle  {
         Triangle newtriangle = (Triangle) o;
         return (Double.compare(newtriangle.sideA, sideA) == 0 && Double.compare(newtriangle.sideB, sideB) == 0 && Double.compare(newtriangle.sideC, sideC) == 0)
                 || (Double.compare(newtriangle.sideA, sideB) == 0 && Double.compare(newtriangle.sideB, sideA) == 0 && Double.compare(newtriangle.sideC, sideC) == 0)
-                || (Double.compare(newtriangle.sideA, sideA) == 0 && Double.compare(newtriangle.sideB, sideB) == 0 && Double.compare(newtriangle.sideC, sideC) == 0);
+                || (Double.compare(newtriangle.sideA, sideA) == 0 && Double.compare(newtriangle.sideB, sideC) == 0 && Double.compare(newtriangle.sideC, sideB) == 0);
     }
 
     @Override
