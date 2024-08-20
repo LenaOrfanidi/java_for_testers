@@ -2,6 +2,8 @@ package manager;
 
 import org.openqa.selenium.By;
 
+import javax.swing.*;
+
 public class HelperBase {
     protected final AppManager manager;
 
@@ -17,5 +19,8 @@ public class HelperBase {
 
     protected void click(By locator) {
         manager.driver.findElement(locator).click();
+    }
+public void selectDropdown(By locator, JComboBox<String> dropdown) {
+        dropdown.setSelectedItem(manager.driver.findElement(locator).getText());
     }
 }
