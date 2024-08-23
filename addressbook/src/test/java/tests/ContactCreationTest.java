@@ -9,7 +9,7 @@ public class ContactCreationTest extends TestBase {
         app.contacts().createContact(new ContactData("Lena", "Doe", "Middle", "Johnny", null, "Mr.",
                 "Company Inc.", "123 Main St", "123456789", "987654321", "555555555", "123456",
                 "john.doe@example.com", "john.doe2@example.com", "john.doe3@example.com",
-                null, null, "1990", null, null, null));
+                null, null, "1990", null, null, "1992"));
     }
 
     @Test

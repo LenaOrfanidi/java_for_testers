@@ -27,7 +27,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public boolean isContactPresent() {
-      openContactPage();
+        openContactPage();
         return manager.isElementPresent(By.name("selected[]"));
     }
 
